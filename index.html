@@ -442,7 +442,7 @@ td .amb { color: var(--muted); font-size: 12px; font-weight: 500; }
       <details><summary>¿Cómo funciona el reparto automático?</summary><p>Primero elige el puente que más rinde de cada festivo y, mientras te queden días, amplía los que más días libres añaden por cada día extra. Los días que sobren conviene guardarlos para el verano.</p></details>
       <details><summary>¿Sirve para otros municipios de Aragón?</summary><p>Los 12 festivos autonómicos son los mismos en toda la comunidad. Los 2 festivos locales son los de Zaragoza capital: otros municipios tienen sus propias fiestas locales.</p></details>
       <details><summary>¿Los datos son oficiales?</summary><p>Sí. Salen del Boletín Oficial de Aragón y se revisaron el 18 de noviembre de 2026. Confirma siempre tus días con tu empresa, porque tu convenio puede añadir otros.</p></details>
-      <details><summary>¿Se guardan mis datos?</summary><p>Tu selección se guarda solo en tu navegador para que la encuentres al volver. No se envía a ningún servidor.</p></details>
+      <details><summary>¿Se guardan mis datos?</summary><p>Tu selección se guarda solo en tu navegador para que la encuentres al volver y no se envía a ningún servidor. La web cuenta visitas de forma anónima con GoatCounter, sin cookies ni datos personales.</p></details>
     </section>
   </article>
 
@@ -893,6 +893,24 @@ td .amb { color: var(--muted); font-size: 12px; font-weight: 500; }
 
   if (!load()) { autoPlan(); state.autoNote = true; }
   render();
+})();
+</script>
+<script data-goatcounter="https://puentes-zaragoza.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function () {
+  function ev(name, title) {
+    try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: name, title: title || name, event: true }); } catch (e) {}
+  }
+  document.addEventListener("click", function (e) {
+    var t = e.target.closest ? e.target.closest("button, a") : null;
+    if (!t) return;
+    if (t.id === "auto" || t.id === "mbAuto") ev("repartir-automatico", "Repartir automáticamente");
+    else if (t.id === "clear") ev("vaciar-plan", "Vaciar plan");
+    else if (t.hasAttribute("data-year")) ev("ver-" + t.getAttribute("data-year"), "Ver año " + t.getAttribute("data-year"));
+    else if (t.classList.contains("opt")) ev("pulsar-puente", "Añadir o quitar un puente");
+    else if (t.classList.contains("day")) ev("pulsar-dia", "Pedir o quitar un día");
+    else if (t.classList.contains("li-link")) ev("clic-linkedin", "Clic en LinkedIn del autor");
+  }, true);
 })();
 </script>
 </body>

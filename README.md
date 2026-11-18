@@ -10,6 +10,7 @@ Calculadora gratuita de puentes y vacaciones con los festivos oficiales de Arag�
 - Agrupa los puentes por festivo y dice qué días pedir y cuántos días libres seguidos salen.
 - Reparte tus días de vacaciones de forma automática en los puentes que más rinden.
 - Guarda tu selección solo en tu navegador.
+- Cuenta visitas de forma anónima con GoatCounter (sin cookies ni datos personales).
 
 ## Fuentes
 
