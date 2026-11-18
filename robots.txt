@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alvaroalonsoorigen-eng.github.io/puentes-zaragoza/sitemap.xml
